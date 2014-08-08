@@ -1,8 +1,8 @@
 /**************************************************************************
  *
- * FILE NAME:			main.h
- * FILE DESCRIPTION:	main header
- * FILE CREATION DATE:	28-08-09
+ * FILE NAME:            main.h
+ * FILE DESCRIPTION:    main header
+ * FILE CREATION DATE:    28-08-09
  *
  *==========================================================================
  * This document contains confidential information which is protected by copyright 
@@ -12,7 +12,7 @@
  *
  * Modification history:
  * --------------------
- * 01a,28aug09 erd	written
+ * 01a,28aug09 erd    written
  *
  ***************************************************************************/
 

@@ -1,8 +1,8 @@
 /**************************************************************************
  *
- * FILE NAME:			quadenc_prv.h
- * FILE DESCRIPTION:	QUADENC private header
- * FILE CREATION DATE:	9-01-2010
+ * FILE NAME:            quadenc_prv.h
+ * FILE DESCRIPTION:    QUADENC private header
+ * FILE CREATION DATE:    9-01-2010
  *
  *==========================================================================
  * This document contains confidential information which is protected by copyright 
@@ -12,7 +12,7 @@
  *
  * Modification history:
  * --------------------
- * 01a,9jan10 erd	written
+ * 01a,9jan10 erd    written
  *
  ***************************************************************************/
 
@@ -27,9 +27,9 @@
 // states
 typedef enum
 {
-	QUADENC_STATE_IDLE,
-	QUADENC_STATE_DETECTING_CW,
-	QUADENC_STATE_DETECTING_CCW,
+    QUADENC_STATE_IDLE,
+    QUADENC_STATE_DETECTING_CW,
+    QUADENC_STATE_DETECTING_CCW,
 
 } QUADENC_STATE;
 
@@ -37,8 +37,8 @@ typedef enum
 #define QUADENC_NO_TRANSITION_EVENT (1)
 
 // expected transitions
-const uint_8 quadenc_cwTransitions[] 	= {8, 0, 15, 7};
-const uint_8 quadenc_ccwTransitions[] 	= {0, 8, 7, 15};
+const uint_8 quadenc_cwTransitions[]     = {8, 0, 15, 7};
+const uint_8 quadenc_ccwTransitions[]     = {0, 8, 7, 15};
 
 // ==========================================================================
 // locals

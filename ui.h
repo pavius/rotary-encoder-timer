@@ -1,8 +1,8 @@
 /**************************************************************************
  *
- * FILE NAME:			ui_prv.h
- * FILE DESCRIPTION:	UI private header
- * FILE CREATION DATE:	12-01-10
+ * FILE NAME:            ui_prv.h
+ * FILE DESCRIPTION:    UI private header
+ * FILE CREATION DATE:    12-01-10
  *
  *==========================================================================
  * This document contains confidential information which is protected by copyright 
@@ -12,7 +12,7 @@
  *
  * Modification history:
  * --------------------
- * 01a,12jan10 erd	written
+ * 01a,12jan10 erd    written
  *
  ***************************************************************************/
 

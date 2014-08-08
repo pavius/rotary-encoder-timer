@@ -1,9 +1,9 @@
 /**************************************************************************
  *
- * FILE NAME:			common.c
- * FILE DESCRIPTION:	Common routines
+ * FILE NAME:            common.c
+ * FILE DESCRIPTION:    Common routines
  *
- * FILE CREATION DATE:	24-05-2004
+ * FILE CREATION DATE:    24-05-2004
  *
  *==========================================================================
  *           Copyright (c) 2004 NIR Diagnostics Inc., Ontario, Canada
@@ -16,7 +16,7 @@
  *
  * Modification history:
  * --------------------
- * 01a,24may03 erd	written
+ * 01a,24may03 erd    written
  *
  ***************************************************************************/
 
@@ -33,25 +33,25 @@ unsigned char time_delayUsLeft;
 // Caluclates an 1's complement checksum over contents of buffer
 // 
 // Arguments:
-//	buffer: ptr to start of buffer on which chksum is calculated over
-//	size: size, in bytes, of buffer
+//    buffer: ptr to start of buffer on which chksum is calculated over
+//    size: size, in bytes, of buffer
 //
 // Return value:
-//	checksum value
+//    checksum value
 //
 uint_8 sys_calculateChecksum(uint_8 *buffer, uint_8 size)
 {
-	uint_8 chksum = 0;
+    uint_8 chksum = 0;
 
-	// calculate the checksum over the buffer
-	while (size--) 
-	{
-		chksum += *buffer;
-		buffer++;
-	}
+    // calculate the checksum over the buffer
+    while (size--) 
+    {
+        chksum += *buffer;
+        buffer++;
+    }
 
-	// return the checksum
-	return (~chksum + 1);
+    // return the checksum
+    return (~chksum + 1);
 }
 // ==========================================================================
 // uint_16 calculateChecksum16(uint_8 *buffer, uint_16 size)
@@ -59,26 +59,26 @@ uint_8 sys_calculateChecksum(uint_8 *buffer, uint_8 size)
 // Caluclates an 16bit checksum over contents of buffer
 // 
 // Arguments:
-//	buffer: ptr to start of buffer on which chksum is calculated over
-//	size: size, in bytes, of buffer
+//    buffer: ptr to start of buffer on which chksum is calculated over
+//    size: size, in bytes, of buffer
 //
 // Return value:
-//	checksum value
+//    checksum value
 //
 
 uint_16 sys_calculateChecksum16(uint_8 *buffer, uint_16 size)
 {
-	uint_16 chksum = 0;
+    uint_16 chksum = 0;
 
-	// calculate the checksum over the buffer
-	while (size--) 
-	{
-		chksum += *buffer;
-		buffer++;
-	}
+    // calculate the checksum over the buffer
+    while (size--) 
+    {
+        chksum += *buffer;
+        buffer++;
+    }
 
-	// return the checksum
-	return (~chksum + 1);
+    // return the checksum
+    return (~chksum + 1);
 }
 
 // ==========================================================================
@@ -87,27 +87,27 @@ uint_16 sys_calculateChecksum16(uint_8 *buffer, uint_16 size)
 // delay one mS
 //
 // Arguments:
-//	ms: the amount of miliseconds to delay
+//    ms: the amount of miliseconds to delay
 // 
 
 void time_delayMs(int_16 ms)
 {
-	uint_8 i;
+    uint_8 i;
 
-	do 
-	{
-		// reset i
-		i = 4;
-		
-		do 
-		{
-			// delay a quarter of a ms
-			time_delayUs(250);
-			CLRWDT();
-		
-		} while(--i);
-	
+    do 
+    {
+        // reset i
+        i = 4;
+        
+        do 
+        {
+            // delay a quarter of a ms
+            time_delayUs(250);
+            CLRWDT();
+        
+        } while(--i);
+    
 
-	} while(--ms);
+    } while(--ms);
 }
 

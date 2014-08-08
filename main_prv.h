@@ -1,8 +1,8 @@
 /**************************************************************************
  *
- * FILE NAME:			main_prv.h
- * FILE DESCRIPTION:	main private header
- * FILE CREATION DATE:	9-01-2010
+ * FILE NAME:            main_prv.h
+ * FILE DESCRIPTION:    main private header
+ * FILE CREATION DATE:    9-01-2010
  *
  *==========================================================================
  * This document contains confidential information which is protected by
@@ -13,7 +13,7 @@
  *
  * Modification history:
  * --------------------
- * 01a,9jan10 erd	written
+ * 01a,9jan10 erd    written
  *
  ***************************************************************************/
 
@@ -28,10 +28,10 @@
 // submodules
 typedef enum
 {
-	TIMER_SM_UI,				// user interface
+    TIMER_SM_UI,                // user interface
 
-	// MUST be last: the number of submodules which require periodic 'tick's
-	TIMER_SM_COUNT
+    // MUST be last: the number of submodules which require periodic 'tick's
+    TIMER_SM_COUNT
 
 } TIMER_SUBMODULES;
 

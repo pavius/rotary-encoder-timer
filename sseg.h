@@ -1,8 +1,8 @@
 /**************************************************************************
  *
- * FILE NAME:			sseg.h
- * FILE DESCRIPTION:	SSEG header
- * FILE CREATION DATE:	9-01-2010
+ * FILE NAME:            sseg.h
+ * FILE DESCRIPTION:    SSEG header
+ * FILE CREATION DATE:    9-01-2010
  *
  *==========================================================================
  * This document contains confidential information which is protected by copyright 
@@ -12,7 +12,7 @@
  *
  * Modification history:
  * --------------------
- * 01a,9jan10 erd	written
+ * 01a,9jan10 erd    written
  *
  ***************************************************************************/
 

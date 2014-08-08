@@ -1,9 +1,9 @@
 /**************************************************************************
  *
- * FILE NAME:			system.h
- * FILE DESCRIPTION:	System private declarations
+ * FILE NAME:            system.h
+ * FILE DESCRIPTION:    System private declarations
  *
- * FILE CREATION DATE:	24-05-2004
+ * FILE CREATION DATE:    24-05-2004
  *
  *==========================================================================
  *           Copyright (c) 2004 NIR Diagnostics Inc., Ontario, Canada
@@ -16,7 +16,7 @@
  *
  * Modification history:
  * --------------------
- * 01a,24may03 erd	written
+ * 01a,24may03 erd    written
  *
  ***************************************************************************/
 

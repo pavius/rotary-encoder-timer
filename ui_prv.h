@@ -1,8 +1,8 @@
 /**************************************************************************
  *
- * FILE NAME:			ui_prv.h
- * FILE DESCRIPTION:	UI private header
- * FILE CREATION DATE:	12-01-10
+ * FILE NAME:            ui_prv.h
+ * FILE DESCRIPTION:    UI private header
+ * FILE CREATION DATE:    12-01-10
  *
  *==========================================================================
  * This document contains confidential information which is protected by copyright 
@@ -12,7 +12,7 @@
  *
  * Modification history:
  * --------------------
- * 01a,12jan10 erd	written
+ * 01a,12jan10 erd    written
  *
  ***************************************************************************/
 
@@ -25,93 +25,93 @@
 // Constants
 
 // how many ticks for button to be pressed down for click to be a long press
-#define UI_BUTTON_TICKS_FOR_LONG_PRESS				(200)
+#define UI_BUTTON_TICKS_FOR_LONG_PRESS                (200)
 
 // how many ticks to wait from button release to start of next click for click
 // to be a double click
-#define UI_BUTTON_MAX_TICKS_FOR_SECOND_CLICK		(10)
+#define UI_BUTTON_MAX_TICKS_FOR_SECOND_CLICK        (10)
 
 // beep counters
-#define UI_SHORT_BEEP_TICKS							(6)
-#define UI_LONG_BEEP_TICKS							(100)
+#define UI_SHORT_BEEP_TICKS                            (6)
+#define UI_LONG_BEEP_TICKS                            (100)
 
 // number of timers
-#define UI_TIMER_COUNT								(3)
+#define UI_TIMER_COUNT                                (3)
 
 // how many seconds teh alarm will beep before turns off automatically
-#define UI_TIMER_ALARM_SECONDS_AUTO_OFF				(60)
+#define UI_TIMER_ALARM_SECONDS_AUTO_OFF                (60)
 
 // how often visual indication (toggling) occurs
-#define UI_TMR_VISUAL_INDICATION_TICKS				(5)
+#define UI_TMR_VISUAL_INDICATION_TICKS                (5)
 
 // 16 bit alarm cadence where each bit is UI_TMR_VISUAL_INDICATION_TICKS long
-#define UI_ALARM_CADENCE							(0b0000000011010101)
+#define UI_ALARM_CADENCE                            (0b0000000011010101)
 
 // button state
 typedef enum
 {
-	UI_BUTSTAT_WAIT_FOR_PRESS_DOWN,					// idle state, waiting for press
-	UI_BUTSTAT_WAIT_FOR_PRESS_UP,					// button pressed down, waiting for release
-	UI_BUTSTAT_WAIT_FOR_PRESS_UP_AFTER_MOVEMENT,	// button pressed down and movement was detected
-	UI_BUTSTAT_WAIT_SECOND_PRESS_DOWN,				// wait to see if there is a double click
-	UI_BUTSTAT_WAIT_SECOND_PRESS_UP					// button pressed down, wait for up
+    UI_BUTSTAT_WAIT_FOR_PRESS_DOWN,                    // idle state, waiting for press
+    UI_BUTSTAT_WAIT_FOR_PRESS_UP,                    // button pressed down, waiting for release
+    UI_BUTSTAT_WAIT_FOR_PRESS_UP_AFTER_MOVEMENT,    // button pressed down and movement was detected
+    UI_BUTSTAT_WAIT_SECOND_PRESS_DOWN,                // wait to see if there is a double click
+    UI_BUTSTAT_WAIT_SECOND_PRESS_UP                    // button pressed down, wait for up
 
 } UI_BUTTON_STATE;
 
 // event
 typedef enum
 {
-	// button specific
-	UI_EVT_NONE,						// no event
-	UI_EVT_SINGLE_LONG_PRESS_HOLDING,	// user is pressing for a long time, still holding
-	UI_EVT_SINGLE_LONG_PRESS,			// long press (released)
-	UI_EVT_SINGLE_SHORT_PRESS,			// short press (released)
-	UI_EVT_DOUBLE_PRESS,				// double click
+    // button specific
+    UI_EVT_NONE,                        // no event
+    UI_EVT_SINGLE_LONG_PRESS_HOLDING,    // user is pressing for a long time, still holding
+    UI_EVT_SINGLE_LONG_PRESS,            // long press (released)
+    UI_EVT_SINGLE_SHORT_PRESS,            // short press (released)
+    UI_EVT_DOUBLE_PRESS,                // double click
 
-	// rotary specific
-	UI_EVT_MOVEMENT_NO_PRESS,			// dial turning with no press
-	UI_EVT_MOVEMENT_PRESS,				// dial turning with
+    // rotary specific
+    UI_EVT_MOVEMENT_NO_PRESS,            // dial turning with no press
+    UI_EVT_MOVEMENT_PRESS,                // dial turning with
 
-	// 1 second timer
-	UI_EVT_ONE_SECOND_TIMER				// one second timer event
+    // 1 second timer
+    UI_EVT_ONE_SECOND_TIMER                // one second timer event
 
 } UI_EVENT;
 
 // button state information
 typedef struct
 {
-	UI_BUTTON_STATE 	state;
-	UI_EVENT 			event;
-	uint_8				statusHistory;
-	uint_16				ticksAccumulator;
+    UI_BUTTON_STATE     state;
+    UI_EVENT             event;
+    uint_8                statusHistory;
+    uint_16                ticksAccumulator;
 
 } UI_BUTTON_DATA;
 
 // UI state
 typedef enum
 {
-	UI_STATE_DISPLAYING_INACTIVE_TIMER,
-	UI_STATE_DISPLAYING_ACTIVE_TIMER
-		
+    UI_STATE_DISPLAYING_INACTIVE_TIMER,
+    UI_STATE_DISPLAYING_ACTIVE_TIMER
+        
 } UI_STATE;
 
 // timer state
 typedef enum
 {
-	UI_TIMER_STATE_INACTIVE,
-	UI_TIMER_STATE_ACTIVE,
-	UI_TIMER_STATE_EXPIRED
+    UI_TIMER_STATE_INACTIVE,
+    UI_TIMER_STATE_ACTIVE,
+    UI_TIMER_STATE_EXPIRED
 
 } UI_TIMER_STATE;
 
 // a timer
 typedef struct
 {
-	int_8 				hoursLeft;
-	int_8 				minutesLeft;
-	uint_8				secondsLeft;
-	UI_TIMER_STATE		state;
-	uint_8				alarmSecondsLeft;
+    int_8                 hoursLeft;
+    int_8                 minutesLeft;
+    uint_8                secondsLeft;
+    UI_TIMER_STATE        state;
+    uint_8                alarmSecondsLeft;
 
 } UI_TIMER;
 
@@ -159,9 +159,9 @@ void ui_buttonDataInit(UI_BUTTON_DATA *buttonData);
 // take the current button state, the button history and check if a press 
 // event occurred
 void ui_checkButtonEvent(BOOL currentStatus, 
-						 UI_BUTTON_DATA *buttonData, 
-						 BOOL rotaryEncoderMovementDetected,
-						 UI_EVENT *event);
+                         UI_BUTTON_DATA *buttonData, 
+                         BOOL rotaryEncoderMovementDetected,
+                         UI_EVENT *event);
 
 // get event
 UI_EVENT ui_getRotaryEncoderEvent(int_8 *rotation);
